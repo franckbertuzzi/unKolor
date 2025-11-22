@@ -1,0 +1,105 @@
+---
+// Services Basic
+// ------------
+// Description: A services section with a title, a subtitle, a description and a grid of services
+// Properties:
+// - title: The title of the services section
+// - text: The subtitle of the services section
+// - description: The description of the services section
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - Blocks
+import TitleSection from '../basic/TitleSection.astro'
+// - UI
+import Service from '../../ui/cards/ServiceCard.astro'
+
+// Get current locale
+const currentLocale = (Astro.currentLocale || 'en') as 'en' | 'fr'
+const localePrefix = currentLocale === 'fr' ? '/fr' : ''
+
+// Translations
+const translations = {
+	en: {
+		title: "Stuff we're good at and love doing too.",
+		text: 'Our services blend bold design, smart UX, and clean builds into experiences that feel good and perform even better. Custom, scalable, never boring.',
+		designTitle: 'Design That Flows',
+		designSubtitle:
+			'Good design should feel invisible. We craft user experiences that just make sense and look awesome — no extra thinking required. From intuitive flows to pixel-perfect interactions, we make sure every tap, click, and scroll feels effortless.',
+		brandsTitle: 'Brands That Stick.',
+		brandsSubtitle:
+			'Logos, colors, type — we craft the DNA of your brand so it shows up sharp, scroll-stopping, and unmistakably you.',
+		codeTitle: 'Code That Behaves.',
+		codeSubtitle:
+			'From quick-launch sites to fully custom builds, we make sure what you see is what actually works.',
+		motionTitle: 'Motion That Moves You.',
+		motionSubtitle:
+			'Animation brings brands to life — literally. We use motion to grab attention, tell stories, and make every experience feel like magic.'
+	},
+	fr: {
+		title: 'Cosas en las que somos buenos y también nos encanta hacer.',
+		text: 'Nuestros servicios combinan diseño audaz, UX inteligente y construcciones limpias en experiencias que se sienten bien y funcionan aún mejor. Personalizado, escalable, nunca aburrido.',
+		designTitle: 'Diseño Que Fluye',
+		designSubtitle:
+			'El buen diseño debería sentirse invisible. Creamos experiencias de usuario que simplemente tienen sentido y se ven increíbles — sin necesidad de pensar extra. Desde flujos intuitivos hasta interacciones perfectas, nos aseguramos de que cada toque, clic y desplazamiento se sienta sin esfuerzo.',
+		brandsTitle: 'Marcas Que Perduran.',
+		brandsSubtitle:
+			'Logos, colores, tipografía — creamos el ADN de tu marca para que se muestre con estilo, que detenga el desplazamiento y sea inconfundiblemente tú.',
+		codeTitle: 'Código Que Se Comporta.',
+		codeSubtitle:
+			'Desde sitios de lanzamiento rápido hasta construcciones completamente personalizadas, nos aseguramos de que lo que ves fr lo que realmente funciona.',
+		motionTitle: 'Movimiento Que Te Conmueve.',
+		motionSubtitle:
+			'La animación da vida a las marcas — literalmente. Usamos el movimiento para captar la atención, contar historias y hacer que cada experiencia se sienta como magia.'
+	}
+}
+
+const t = translations[currentLocale]
+---
+
+<TitleSection title={t.title} text={t.text} classes="pb-15!" />
+<Section classes="pt-0!">
+	<Row>
+		<Col span="4">
+			<Service
+				title={t.designTitle}
+				subtitle={t.designSubtitle}
+				link={`${localePrefix}/services`}
+				image="/assets/services/1.webp"
+				classes="h-full"
+				cardBodyClasses="h-full lg:min-h-[440px] min-h-[220px] relative"
+			/>
+		</Col>
+		<Col span="8" classes="flex flex-col gap-7.5">
+			<div class="flex flex-col gap-7.5 lg:flex-row">
+				<Service
+					title={t.brandsTitle}
+					subtitle={t.brandsSubtitle}
+					link={`${localePrefix}/services`}
+					classes="h-full w-full"
+					cardBodyClasses="h-full min-h-[220px] relative"
+					image="/assets/services/2.webp"
+				/>
+				<Service
+					title={t.codeTitle}
+					subtitle={t.codeSubtitle}
+					link={`${localePrefix}/services`}
+					classes="h-full w-full"
+					cardBodyClasses="h-full min-h-[220px] relative"
+					image="/assets/services/a.jpg"
+				/>
+			</div>
+			<Service
+				title={t.motionTitle}
+				subtitle={t.motionSubtitle}
+				link={`${localePrefix}/services`}
+				classes="h-full"
+				cardBodyClasses="h-full min-h-[220px] relative"
+				image="/assets/services/b.jpg"
+			/>
+		</Col>
+	</Row>
+</Section>

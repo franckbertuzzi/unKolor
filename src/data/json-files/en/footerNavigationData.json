@@ -1,0 +1,35 @@
+{
+	"footerAbout": {
+		"aboutText": "Tired of boring? Let’s talk.",
+		"aboutLink": "hello@pytagora.com"
+	},
+	"footerColumns": [
+		{
+			"subCategories": [
+				{
+					"subCategory": "Our culture",
+					"subCategoryLink": "/about-v1"
+				},
+				{
+					"subCategory": "Journal",
+					"subCategoryLink": "/blog"
+				},
+				{
+					"subCategory": "Services",
+					"subCategoryLink": "/services"
+				},
+				{
+					"subCategory": "Contact",
+					"subCategoryLink": "/contact"
+				},
+				{
+					"subCategory": "Terms",
+					"subCategoryLink": "/terms"
+				}
+			]
+		}
+	],
+	"subFooter": {
+		"copywriteText": "2025 Pytagora"
+	}
+}

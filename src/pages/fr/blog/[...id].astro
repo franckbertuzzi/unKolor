@@ -1,0 +1,50 @@
+---
+// Página de Publicación del Blog
+// ------------
+// Descripción: La página de publicación del blog muestra una sola publicación del blog.
+
+// Components
+// - Layout
+import Layout from '../../../layouts/BlogLayout.astro'
+
+// Data
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+	// Helper function to get locale from entry ID
+	function getLocaleFromId(id: string): string {
+		if (id.startsWith('fr/')) return 'fr'
+		if (id.startsWith('en/')) return 'en'
+		return 'en' // default to English
+	}
+
+	// Helper function to get base ID without locale prefix
+	function getBaseId(id: string): string {
+		if (id.startsWith('fr/')) return id.replace('fr/', '')
+		if (id.startsWith('en/')) return id.replace('en/', '')
+		return id
+	}
+
+	const blogPosts = await getCollection('blog')
+	// Filter to only Spanish entries (fr/ prefix)
+	const spanishPosts = blogPosts.filter((entry) => {
+		const locale = getLocaleFromId(entry.id)
+		return locale === 'fr'
+	})
+	
+	return spanishPosts.map((entry) => {
+		const baseId = getBaseId(entry.id)
+		return {
+			params: { id: baseId },
+			props: { entry }
+		}
+	})
+}
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout frontmatter={entry.data}>
+	<Content />
+</Layout>
+

@@ -1,0 +1,39 @@
+[
+	{
+		"blockquote": "Teníamos un mensaje. pytagora le dio forma. Desde el primer wireframe hasta la animación de desplazamiento final, todo se sintió intencional — como si entendieran el alma de nuestra marca mejor que nosotros.",
+		"figcaption": "Sarah L, Fundadora, Noto Studio",
+		"colSpan": "6",
+		"colStart": "2",
+		"classes": "self-end"
+	},
+
+	{
+		"blockquote": "Dejamos de parecer una startup. Ahora nos *sentimos* como una marca.",
+		"figcaption": "Sofia Dimitriou, Altura Systems",
+		"colSpan": "5",
+		"classes": "self-end"
+	},
+
+	{
+		"blockquote": "Es raro encontrar socios de diseño que realmente escuchen, iteren rápido y se obsesionen con los mismos detalles que tú. Trabajar con pytagora fue un recordatorio de que el buen diseño fr confianza silenciosa — y la tienen de sobra.",
+		"figcaption": "Olivia T, Hollow & Co.",
+		"colSpan": "5",
+		"classes": "self-start"
+	},
+	{
+		"group": [
+			{
+				"blockquote": "Se siente personalizado, no corporativo. Nuestro nuevo sitio finalmente refleja quiénes somos.",
+				"figcaption": "Riley Morgan, Shift Labs",
+				"colSpan": "5"
+			},
+			{
+				"blockquote": "Teníamos un mensaje. pytagora le dio forma. Desde el primer wireframe hasta la animación de desplazamiento final, todo se sintió intencional — como si entendieran el alma de nuestra marca mejor que nosotros.",
+				"figcaption": "Sarah L, Fundadora, Noto Studio",
+				"colSpan": "7"
+			}
+		],
+		"colSpan": "7"
+	}
+]
+

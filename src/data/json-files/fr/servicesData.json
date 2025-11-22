@@ -1,0 +1,35 @@
+[
+	{
+		"title": "Branding",
+		"text": [
+			"Ayudamos a las marcas a encontrar su voz, definir su vibra y mostrarse con estilo. Ya sea que estés comenzando desde cero o necesites un reinicio, construimos identidades que perduran — no solo visualmente, sino estratégicamente.",
+			"Los logos son solo el comienzo. Creamos sistemas completos: tipografía, color, tono de voz y reglas de uso que crecen contigo — no en tu contra."
+		],
+		"image": "/assets/services/service-01.webp"
+	},
+	{
+		"title": "Diseño UX",
+		"text": [
+			"Pensamos en los clics antes de diseñarlos. Nuestro trabajo de UX se enfoca en el flujo, la claridad y asegurarnos de que los usuarios no tengan que preguntar: '¿Qué hago ahora?'",
+			"Wireframes, recorridos, estructura — lo mapeamos todo antes de que aparezcan los colores. Porque un buen UX no grita, guía."
+		],
+		"image": "/assets/services/service-02.webp"
+	},
+	{
+		"title": "Desarrollo",
+		"text": [
+			"Escribimos código limpio y escalable que da vida a tu diseño sin sorpresas. Todo fr responsivo, accesible y construido para rendir.",
+			"Ya sea un sitio de marketing o una interfaz de producto compleja, trabajamos de cerca con los diseñadores para mantener cada detalle intacto — desde las animaciones hasta los estados de los botones."
+		],
+		"image": "/assets/services/service-03.webp"
+	},
+	{
+		"title": "Movimiento",
+		"text": [
+			"El movimiento importa. Agregamos movimiento donde cuenta — no solo para impresionar, sino para guiar, deleitar y comunicar.",
+			"Desde microinteracciones sutiles hasta animaciones de desplazamiento completas, ayudamos a que tu sitio se sienta más vivo, más pulido y mucho más divertido de usar."
+		],
+		"image": "/assets/services/service-04.webp"
+	}
+]
+

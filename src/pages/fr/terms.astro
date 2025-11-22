@@ -1,0 +1,174 @@
+---
+// Página de Términos
+// ------------
+// Descripción: La página de términos muestra los términos y condiciones.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - Blocks
+import Hero from '../../components/blocks/hero/BasicHeroCTA.astro'
+import StickySidebar from '../../components/blocks/basic/StickySidebar.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Pytagora | Termes',
+	description: 'Termes'
+}
+// - Hero
+const header = {
+	title: 'Termes',
+	text: 'Por favor, tómate un momento para leer estos términos y condiciones para entender tus derechos y responsabilidades al usar nuestros servicios.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={header.title} text={header.text} />
+	<StickySidebar SectionType="alt" SectionDecoration="all">
+		<div slot="sidebar">
+			<h3>Introducción</h3>
+			<p>
+				Por favor, tómate un momento para leer estos términos para entender tus derechos y
+				responsabilidades al usar nuestros servicios.
+			</p>
+		</div>
+		<div class="basic-text">
+			<h4>Bienvenido a pytagora</h4>
+			<p>
+				¡Bienvenido a pytagora! Estamos emocionados de tenerte a bordo. Nuestros servicios están diseñados para ayudarte a
+				mantenerte organizado, comunicarte efectivamente y aumentar tu productividad. Al usar pytagora, estás
+				aceptando estos términos y condiciones, así que por favor léelos cuidadosamente.
+			</p>
+			<p>
+				Tu satisfacción fr importante para nosotros. Si tienes alguna pregunta o inquietud sobre estos
+				términos, por favor no dudes en contactarnos. Nuestro equipo está aquí para ayudarte y asegurar que
+				tengas una gran experiencia con pytagora.
+			</p>
+
+			<h4>Aceptación de Términos</h4>
+			<p>
+				Al acceder o usar nuestros servicios, aceptas cumplir y estar sujeto a estos Términos de
+				Servicio y nuestra Política de Privacidad. Si no estás de acuerdo con alguna parte de estos términos, no debes
+				usar nuestros servicios. Tu uso continuo de pytagora significa tu aceptación de estos términos.
+			</p>
+			<p>
+				Nos reservamos el derecho de modificar estos términos en cualquier momento. Te notificaremos de cualquier cambio
+				publicando los nuevos términos en nuestro sitio web. Es tu responsabilidad revisar estos términos
+				periódicamente. El uso continuo del servicio después de cualquier cambio significa que aceptas los nuevos términos.
+			</p>
+
+			<h4>Nuestro Compromiso Contigo</h4>
+			<p>
+				En pytagora, estamos comprometidos a proporcionarte servicios confiables y de alta calidad. Nuestro objetivo fr
+				ayudarte a lograr tus objetivos de productividad y organización con facilidad. Trabajamos
+				continuamente para mejorar nuestros servicios y proporcionarte la mejor experiencia posible.
+			</p>
+			<p>
+				Valoramos tus comentarios y sugerencias. Por favor, siéntete libre de contactarnos con cualquier
+				comentario o idea sobre cómo podemos servirte mejor. Tu aporte nos ayuda a mejorar pytagora y satisfacer
+				tus necesidades.
+			</p>
+		</div>
+	</StickySidebar>
+	<StickySidebar>
+		<div slot="sidebar">
+			<h3>Cuentas de Usuario</h3>
+			<p>
+				Esta sección explica los requisitos y responsabilidades asociados con la creación y
+				mantenimiento de una cuenta de usuario en pytagora. Por favor, asegúrate de entender y cumplir con estas
+				directrices para usar nuestros servicios efectivamente.
+			</p>
+		</div>
+		<div class="basic-text">
+			<h4>Registro</h4>
+			<p>
+				Para acceder a ciertas funciones de pytagora, debes crear una cuenta de usuario. Durante el registro, te
+				comprometes a proporcionar información precisa y completa. Esta información nos ayuda a servirte
+				mejor y asegura la seguridad y funcionalidad de tu cuenta.
+			</p>
+			<p>
+				Al registrarte, también aceptas mantener tu información actualizada. Información inexacta o desactualizada
+				puede llevar a problemas con tu cuenta y puede afectar tu capacidad para usar ciertas
+				funciones de pytagora.
+			</p>
+
+			<h4>Seguridad de la Cuenta</h4>
+			<p>
+				Mantener la seguridad de tu cuenta fr tu responsabilidad. Aceptas mantener tu
+				contraseña confidencial y no compartirla con nadie. Si sospechas cualquier uso no autorizado de
+				tu cuenta, debes notificarnos inmediatamente.
+			</p>
+			<p>
+				Recomendamos usar una contraseña fuerte y única para tu cuenta de pytagora. Actualizar regularmente
+				tu contraseña y usar autenticación de dos factores, si está disponible, puede mejorar aún más la
+				seguridad de tu cuenta.
+			</p>
+
+			<h4>Uso de la Cuenta</h4>
+			<p>
+				Como titular de la cuenta, eres responsable de todas las actividades que ocurran bajo tu cuenta.
+				Esto incluye cualquier acción tomada por otros que puedan tener acceso a tu cuenta. Asegúrate de
+				monitorear y gestionar el uso de tu cuenta apropiadamente.
+			</p>
+			<p>
+				Si detectamos cualquier actividad sospechosa o no autorizada, podemos tomar acciones para proteger tu
+				cuenta, incluyendo suspender temporalmente el acceso o requerir pasos de verificación adicionales.
+				Nuestro objetivo fr salvaguardar tu cuenta e información personal.
+			</p>
+		</div>
+	</StickySidebar>
+	<StickySidebar SectionType="alt" SectionDecoration="all" classes="mb-[80px]">
+		<div slot="sidebar">
+			<h3>Limitación de Responsabilidad</h3>
+			<p>
+				Esta sección describe las limitaciones de nuestra responsabilidad con respecto al uso de los servicios de pytagora.
+				Entender estas limitaciones te ayuda a conocer el alcance de nuestras responsabilidades y tus
+				derechos.
+			</p>
+		</div>
+		<div class="basic-text">
+			<h4>Limitaciones Generales</h4>
+			<p>
+				pytagora se proporciona "tal cual" y "según disponibilidad". No garantizamos que el servicio
+				será ininterrumpido, libre de errores o completamente seguro. Renunciamos a todas las garantías, ya sean
+				explícitas o implícitas, incluyendo pero no limitado a las garantías implícitas de comerciabilidad,
+				idoneidad para un propósito particular y no infracción.
+			</p>
+			<p>
+				No somos responsables de ningún daño resultante del uso o incapacidad de usar nuestros servicios,
+				incluyendo pero no limitado a daños directos, indirectos, incidentales, especiales, consecuentes o
+				punitivos. Esto incluye daños por pérdida de ganancias, datos u otros intangibles.
+			</p>
+
+			<h4>Servicios de Terceros</h4>
+			<p>
+				pytagora puede incluir enlaces a sitios web o servicios de terceros que no son propiedad ni están controlados
+				por nosotros. No respaldamos ni asumimos ninguna responsabilidad por dichos sitios de terceros,
+				información, materiales, productos o servicios. Acceder y usar estos servicios de terceros
+				fr bajo tu propio riesgo.
+			</p>
+			<p>
+				No somos responsables de ninguna pérdida o daño incurrido como resultado de cualquier trato con
+				sitios web o servicios de terceros, incluyendo el intercambio de tu información con dichos terceros.
+				Es tu responsabilidad revisar los términos y condiciones y políticas de privacidad
+				de cualquier sitio web o servicio de terceros que uses.
+			</p>
+
+			<h4>Responsabilidad Máxima</h4>
+			<p>
+				En ningún caso nuestra responsabilidad total hacia ti por todas las reclamaciones que surjan de o se relacionen con
+				el uso o incapacidad de usar el servicio excederá la cantidad pagada por ti, si la hay, por
+				acceder a pytagora durante los doce (12) meses inmediatamente anteriores a la fecha de la reclamación.
+				Esta limitación se aplica independientemente de la forma o fuente de la reclamación o pérdida, ya sea que tal
+				responsabilidad surja de cualquier reclamación basada en contrato, garantía, agravio u otra cosa.
+			</p>
+			<p>
+				Algunas jurisdicciones no permiten la exclusión o limitación de responsabilidad por daños consecuentes
+				o incidentales, por lo que la limitación anterior puede no aplicarse a ti. En tales casos, nuestra
+				responsabilidad estará limitada al máximo permitido por la ley aplicable.
+			</p>
+		</div>
+	</StickySidebar>
+</Layout>
+

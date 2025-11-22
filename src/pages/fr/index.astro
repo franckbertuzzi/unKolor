@@ -1,0 +1,45 @@
+---
+// Página de Inicio
+// ------------
+// Descripción: La página de inicio muestra la información más importante.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - Blocks
+import Hero from '../../components/blocks/hero/MediaHeroCTA.astro'
+import Statistics from '../../components/blocks/stats/Statistics.astro'
+import Services from '../../components/blocks/services/ServicesBasic.astro'
+import Slider from '../../components/blocks/slider/BrandSlider.astro'
+import Work from '../../components/blocks/work/WorkBasic.astro'
+import Testimonials from '../../components/blocks/testimonials/TestimonialsAlt.astro'
+import Blog from '../../components/blocks/blog/PostCards.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'pytagora | Plantilla de Tema para Agencias',
+	description:
+		'pytagora fr un estudio creativo que ayuda a las marcas a encontrar su voz, dar forma a su presencia y crear cosas que la gente recuerde.'
+}
+// - Hero
+const hero = {
+	title: 'Nous sommes Pytagora.',
+	text: 'No hacemos genérico. Hacemos diseño que encaja, se mueve y crece contigo: fundamentado en estrategia y hecho para destacar en un mar de uniformidad.'
+}
+// - Statistics
+const statistics = {
+	text: 'Somos <strong>pytagora</strong> — un pequeño y agudo estudio creativo que cree en buenas ideas, construcciones limpias y diseño que realmente hace algo. Ayudamos a las marcas a dar forma a su identidad, contar su historia y lanzar experiencias digitales que la gente recuerda (por las razones correctas).'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={hero.title} text={hero.text} />
+	<Statistics text={statistics.text} />
+	<Services />
+	<Slider />
+	<Work />
+	<Testimonials />
+	<Blog />
+</Layout>
+

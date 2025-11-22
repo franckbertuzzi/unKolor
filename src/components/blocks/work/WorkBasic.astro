@@ -1,0 +1,85 @@
+---
+// Work Basic
+// ------------
+// Description: A work basic section with a title, a subtitle, a description and a grid of projects
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - Blocks
+import TitleSection from '../basic/TitleSection.astro'
+// - UI
+import ProjectCard from '../../ui/cards/ProjectCard.astro'
+
+// - Collection
+import { getCollection } from 'astro:content'
+
+// Helper function to get locale from entry ID
+function getLocaleFromId(id: string): string {
+	if (id.startsWith('fr/')) return 'fr'
+	if (id.startsWith('en/')) return 'en'
+	return 'en' // default to English
+}
+
+// Helper function to get base ID without locale prefix
+function getBaseId(id: string): string {
+	if (id.startsWith('fr/')) return id.replace('fr/', '')
+	if (id.startsWith('en/')) return id.replace('en/', '')
+	return id
+}
+
+// Get current locale
+const currentLocale = Astro.currentLocale || 'en'
+
+const allWorkProjects = await getCollection('work')
+// Filter by current locale
+const localeWorkProjects = allWorkProjects.filter((entry) => {
+	const locale = getLocaleFromId(entry.id)
+	return locale === currentLocale
+})
+// Function to sort case studies by date
+const sortedWorkProjects = localeWorkProjects.sort((a: any, b: any) => {
+	return new Date(b.data.pubDate || 0).getTime() - new Date(a.data.pubDate || 0).getTime()
+})
+---
+
+<TitleSection
+	title={currentLocale === 'fr' ? 'Socios, no solo proyectos.' : 'Partners, not just projects.'}
+	text={currentLocale === 'fr' ? 'Colaboramos con equipos ambiciosos para construir marcas, lanzar sitios web y diseñar experiencias que realmente dejan huella. Aquí hay un vistazo a algunos de los viajes que hemos compartido.' : "We collaborate with ambitious teams to build brands, launch websites, and design experiences that actually leave a mark. Here's a peek at some of the journeys we've shared."}
+	link={`${currentLocale === 'fr' ? '/fr' : ''}/work`}
+	classes="pb-15!"
+/>
+
+<Section stickyCol classes="overflow-visible! pt-0!">
+	{
+		sortedWorkProjects.slice(0, 5).map((post: any) => (
+			<>
+				<Row classes="mb-12">
+					<Col span="3" classes="h-full">
+						<div class="sticky top-32">
+							<a href={`${currentLocale === 'fr' ? '/fr' : ''}/work/${getBaseId(post.id)}`} class="h3 mb-2 text-3xl! lg:text-5xl!">
+								{post.data.title}
+							</a>
+						</div>
+					</Col>
+					<Col span="9">
+						<ProjectCard
+							image={post.data.imageThumbnail}
+							title={post.data.title}
+							link={`${currentLocale === 'fr' ? '/fr' : ''}/work/${getBaseId(post.id)}`}
+						>
+							<p slot="desc">{post.data.description}</p>
+							<ul slot="list">
+								{post.data.list.map((item: string) => (
+									<li>{item}</li>
+								))}
+							</ul>
+						</ProjectCard>
+					</Col>
+				</Row>
+			</>
+		))
+	}
+</Section>

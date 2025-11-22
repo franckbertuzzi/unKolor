@@ -1,0 +1,36 @@
+{
+	"footerAbout": {
+		"aboutText": "¿Cansado de lo aburrido? Hablemos.",
+		"aboutLink": "hello@pytagora.com"
+	},
+	"footerColumns": [
+		{
+			"subCategories": [
+				{
+					"subCategory": "Nuestra cultura",
+					"subCategoryLink": "/fr/about-v1"
+				},
+				{
+					"subCategory": "Diario",
+					"subCategoryLink": "/fr/blog"
+				},
+				{
+					"subCategory": "Servicios",
+					"subCategoryLink": "/fr/services"
+				},
+				{
+					"subCategory": "Contacto",
+					"subCategoryLink": "/fr/contact"
+				},
+				{
+					"subCategory": "Términos",
+					"subCategoryLink": "/fr/terms"
+				}
+			]
+		}
+	],
+	"subFooter": {
+		"copywriteText": "2025 Pytagora"
+	}
+}
+

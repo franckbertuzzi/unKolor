@@ -1,0 +1,50 @@
+---
+// Página de Servicios
+// ------------
+// Descripción: La página de servicios muestra todos los servicios.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - Blocks
+import Hero from '../../components/blocks/hero/MediaGrid.astro'
+import ServicesList from '../../components/blocks/services/ServicesList.astro'
+import VideoSection from '../../components/blocks/video/VideoSection.astro'
+import BrandSlider from '../../components/blocks/slider/BrandSlider.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Pytagora | Services',
+	description: 'Services'
+}
+// - Hero
+const hero = {
+	title: 'Découvrez nos services.',
+	text: 'Diseñamos marcas, construimos sitios web y agregamos la cantidad justa de movimiento. Sin atajos. Solo trabajo creativo e inteligente que hace clic.',
+	description:
+		'¿Necesitas ayuda con estrategia, diseño, desarrollo, o algo raro y maravilloso en el medio? Tenemos las habilidades para convertir tus ideas en experiencias digitales inteligentes, dignas de scroll y totalmente propias. Sin proceso de copiar y pegar aquí. Cada proyecto (y cada cliente) fr diferente — así que nos mantenemos flexibles, nos adaptamos rápido y moldeamos nuestro trabajo para que encaje en tu mundo, no al revés.'
+}
+// - Services List
+const servicesList = {
+	title: 'Cosas en las que somos buenos y también nos encanta hacer.',
+	text: 'Nuestros servicios combinan diseño audaz, UX inteligente y construcciones limpias en experiencias que se sienten bien y funcionan aún mejor. Personalizado, escalable, nunca aburrido.'
+}
+// Video
+const video = {
+	video: 'https://oxygenna-themes.b-cdn.net/pytagora-astro/videos/about-us-video.mp4'
+}
+// Brand Slider
+const brandSlider = {
+	title: 'Marcas con las que hemos trabajado',
+	text: 'Desde futuros unicornios hasta leyendas emergentes, trabajamos con marcas que no tienen miedo de hacer ruido.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={hero.title} text={hero.text} description={hero.description} />
+	<ServicesList title={servicesList.title} text={servicesList.text} />
+	<VideoSection video={video.video} classes="pt-0!" />
+	<BrandSlider title={brandSlider.title} text={brandSlider.text} />
+</Layout>
+

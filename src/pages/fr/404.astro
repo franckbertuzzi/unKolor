@@ -1,0 +1,58 @@
+---
+// Página 404
+// ------------
+// Descripción: La página 404 se muestra cuando no se encuentra una página.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+import Section from '../../components/ui/Section.astro'
+import Row from '../../components/ui/Row.astro'
+import Col from '../../components/ui/Col.astro'
+// - UI
+import Video from '../../components/ui/Video.astro'
+import Decoration from '../../components/ui/Decor.astro'
+import BasicCard from '../../components/ui/cards/Card.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: '¡Ups! Te Perdiste - Página No Encontrada',
+	description:
+		'Parece que nos perdimos y no encontramos la página. ¡No te preocupes, te ayudaremos a volver al camino correcto!'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Section>
+		<Row>
+			<Col span="6" classes="flex justify-center flex-col">
+				<h1>Esta Página Está Fuera del Mapa</h1>
+				<BasicCard decoration="all" style="transparent">
+					<p>
+						Parece que te has desviado del mapa. Esta página podría haberse ido con el viento,
+						o tal vez nunca existió. Pero no te preocupes — no estás solo aquí. Intenta
+						volver a terreno seguro haciendo clic en el botón de inicio, o usa el menú para explorar
+						otras partes del sitio.
+					</p>
+				</BasicCard>
+			</Col>
+			<Col span="6" classes="lg:order-1">
+				<div class="border-neutral-100 dark:border-neutral-800">
+					<Video
+						video="https://oxygenna-themes.b-cdn.net/pytagora-astro/videos/404-video.mp4"
+						id="video404"
+						width={470}
+						height={600}
+						loop={true}
+						autoplay={true}
+						muted={false}
+						classes="w-full object-cover lg:h-[800px]!"
+					/>
+				</div>
+				<Decoration type="all" />
+			</Col>
+		</Row>
+	</Section>
+</Layout>
+

@@ -1,0 +1,47 @@
+{
+	"logo": {
+		"src": "/logo-light.webp",
+		"srcDark": "/logo-dark.webp",
+		"alt": "El tema de astro tailwind"
+	},
+	"navItems": [
+		{ "name": "Travail", "link": "/fr/work" },
+		{ "name": "Services", "link": "/fr/services" },
+		{ "name": "Culture", "link": "/fr/about-v1" },
+		{ "name": "Blog", "link": "/fr/blog" },
+		{
+			"name": "Pages",
+			"link": "#",
+			"align": "full",
+			"submenu": [
+				{
+					"links": [
+						{ "name": "Inicio v1", "link": "/fr" },
+						{ "name": "Inicio v2", "link": "/fr/home-v2" },
+						{ "name": "Sobre nosotros", "link": "/fr/about-v1" },
+						{ "name": "Sobre nosotros v2", "link": "/fr/about-v2" }
+					]
+				},
+				{
+					"links": [
+						{ "name": "Nuestro Trabajo", "link": "/fr/work" },
+						{ "name": "Nuestro Trabajo v2", "link": "/fr/work-v2" },
+						{ "name": "Proyecto Individual", "link": "/fr/work/atlaswear" },
+						{ "name": "Servicios", "link": "/fr/services" },
+						{ "name": "Términos", "link": "/fr/terms" }
+					]
+				},
+				{
+					"links": [
+						{ "name": "Blog v1", "link": "/fr/blog" },
+						{ "name": "Blog v2", "link": "/fr/blog-v2" },
+						{ "name": "Publicación Individual", "link": "/fr/blog/brands-are-built-in-motion" },
+						{ "name": "Contacto", "link": "/fr/contact" },
+						{ "name": "404", "link": "/fr/404" }
+					]
+				}
+			]
+		}
+	],
+	"navActions": [{ "name": "Contact", "link": "/fr/contact" }]
+}

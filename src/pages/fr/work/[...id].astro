@@ -1,0 +1,50 @@
+---
+// Página de Proyecto de Trabajo
+// ------------
+// Descripción: La página de proyecto de trabajo muestra un solo proyecto de trabajo.
+
+// Components
+// - Layout
+import Layout from '../../../layouts/WorkLayout.astro'
+
+// Data
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+	// Helper function to get locale from entry ID
+	function getLocaleFromId(id: string): string {
+		if (id.startsWith('fr/')) return 'fr'
+		if (id.startsWith('en/')) return 'en'
+		return 'en' // default to English
+	}
+
+	// Helper function to get base ID without locale prefix
+	function getBaseId(id: string): string {
+		if (id.startsWith('fr/')) return id.replace('fr/', '')
+		if (id.startsWith('en/')) return id.replace('en/', '')
+		return id
+	}
+
+	const workProjects = await getCollection('work')
+	// Filter to only Spanish entries (fr/ prefix)
+	const spanishProjects = workProjects.filter((entry) => {
+		const locale = getLocaleFromId(entry.id)
+		return locale === 'fr'
+	})
+	
+	return spanishProjects.map((entry) => {
+		const baseId = getBaseId(entry.id)
+		return {
+			params: { id: baseId },
+			props: { entry }
+		}
+	})
+}
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout frontmatter={entry.data}>
+	<Content />
+</Layout>
+

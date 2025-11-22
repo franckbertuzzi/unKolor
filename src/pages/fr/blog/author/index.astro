@@ -1,0 +1,86 @@
+---
+// Página de Autor del Blog
+// ------------
+// Descripción: La página de autor del blog muestra todas las publicaciones del blog escritas por un autor específico.
+
+// Components
+// - Layout
+import Layout from '../../../../layouts/Layout.astro'
+import Section from '../../../../components/ui/Section.astro'
+import Row from '../../../../components/ui/Row.astro'
+import Col from '../../../../components/ui/Col.astro'
+// - Blocks
+import BlogCard from '../../../../components/ui/cards/BlogCard.astro'
+import Hero from '../../../../components/blocks/hero/BasicHeroCTA.astro'
+// - Collection
+import { getCollection } from 'astro:content'
+
+// Helper function to get locale from entry ID
+function getLocaleFromId(id: string): string {
+	if (id.startsWith('fr/')) return 'fr'
+	if (id.startsWith('en/')) return 'en'
+	return 'en' // default to English
+}
+
+// Helper function to get base ID without locale prefix
+function getBaseId(id: string): string {
+	if (id.startsWith('fr/')) return id.replace('fr/', '')
+	if (id.startsWith('en/')) return id.replace('en/', '')
+	return id
+}
+
+const allPosts = await getCollection('blog')
+// Filter to only Spanish entries
+const spanishPosts = allPosts.filter((entry) => {
+	const locale = getLocaleFromId(entry.id)
+	return locale === 'fr'
+})
+
+// Content
+// - SEO
+const SEO = {
+	title: 'pytagora | Proyectos de Trabajo',
+	description:
+		'Explora los últimos proyectos de trabajo de pytagora diseñados para mejorar la productividad, garantizar seguridad de primer nivel e integrarse perfectamente con tus herramientas favoritas.'
+}
+
+// Sort blog posts by publication date (newest first)
+const sortedBlogPosts = spanishPosts.sort((a: any, b: any) => {
+	return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+})
+// Define the grid column pattern (repeats every 6 posts)
+const columnMap = ['1', '3', '1', '2', '2', '3']
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="En lo que estamos pensando."
+		text="Notas del estudio sobre trabajo, proceso y resolución creativa de problemas. Sin relleno, solo ideas que queríamos compartir."
+	/>
+	<Section classes="pt-0!">
+		<Row classes="grid-cols-3! gap-y-15!">
+			{
+				sortedBlogPosts.map((post: any, index: number) => {
+					const gridColumn = columnMap[index % columnMap.length]
+
+					return (
+						<Col span="1" start={gridColumn}>
+							<BlogCard
+								title={post.data.title}
+								image={post.data.image}
+								video={post.data.video}
+								link={`/fr/blog/${getBaseId(post.id)}`}
+								date={post.data.pubDate}
+								author={post.data.author}
+								locale="fr"
+								classes="h-full"
+							>
+								{post.data.description}
+							</BlogCard>
+						</Col>
+					)
+				})
+			}
+		</Row>
+	</Section>
+</Layout>

@@ -1,0 +1,57 @@
+---
+// Página Acerca de
+// ------------
+// Descripción: La página acerca de muestra información sobre la empresa.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - Blocks
+import BasicHeroCTA from '../../components/blocks/hero/BasicHeroCTA.astro'
+import TwoColVideoSection from '../../components/blocks/video/TwoColVideoSection.astro'
+import TeamIntro from '../../components/blocks/team/TeamIntro.astro'
+import Statistics from '../../components/blocks/stats/Statistics.astro'
+import Testimonials from '../../components/blocks/testimonials/TestimonialsAlt.astro'
+import BrandSlider from '../../components/blocks/slider/BrandSlider.astro'
+// - UI
+import Card from '../../components/ui/cards/Card.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'pytagora | Acerca de nosotros',
+	description: 'Acerca de nosotros'
+}
+// - Hero
+const hero = {
+	title: 'Equipo pequeño, mentes agudas.'
+}
+// - About Section
+const aboutSection = {
+	leftCardContent: [
+		`pytagora fr un equipo compacto de diseñadores, desarrolladores y estrategas de marca que piensan que los equipos pequeños
+    pueden hacer grandes cosas — especialmente cuando se llevan bien. Trabajamos de cerca (y reímos a menudo),
+    impulsados por opiniones fuertes, hilos abiertos en Slack, y el ocasional comentario caliente alimentado por espresso.`,
+
+		`Creemos que el mejor trabajo viene de un buen proceso, retroalimentación honesta, y la libertad de perseguir
+    ideas raras hasta el final. Colaborando directamente con nuestros clientes. Somos
+    remotos primero, amigables con las zonas horarias, y ocasionalmente caóticos de la mejor manera.`
+	],
+	rightCardVideo: 'https://oxygenna-themes.b-cdn.net/pytagora-astro/videos/about-us-video.mp4'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<BasicHeroCTA title={hero.title} titleSpan="12" classes="[&_h1]:max-w-[920px]" />
+
+	<TwoColVideoSection classes="pt-0! overflow-visible!" video={aboutSection.rightCardVideo}>
+		<Card>
+			{aboutSection.leftCardContent.map((paragraph) => <p class="mb-9! last:mb-0">{paragraph}</p>)}
+		</Card>
+	</TwoColVideoSection>
+	<TeamIntro />
+	<Statistics />
+	<Testimonials sectionType="none" />
+	<BrandSlider />
+</Layout>
+

@@ -1,0 +1,32 @@
+---
+// Página de Contacto
+// ------------
+// Descripción: La página de contacto muestra un formulario de contacto.
+
+// Components
+// - Layout
+import Layout from '../../layouts/Layout.astro'
+// - Blocks
+import ContactHeroCTA from '../../components/blocks/hero/ContactHeroCTA.astro'
+import TestimonialsBasic from '../../components/blocks/testimonials/TestimonialsBasic.astro'
+import BrandSlider from '../../components/blocks/slider/BrandSlider.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'pytagora | Contacto',
+	description: 'Contacto'
+}
+// - Hero
+const hero = {
+	title: 'Hablemos de tus sueños',
+	text: 'Estamos aquí para ayudarte con cualquier pregunta o inquietud que puedas tener.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<ContactHeroCTA title={hero.title} text={hero.text} />
+	<TestimonialsBasic sectionType="none" />
+	<BrandSlider />
+</Layout>
+

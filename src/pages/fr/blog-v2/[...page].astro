@@ -1,0 +1,66 @@
+---
+// Página de Blog
+// ------------
+// Descripción: La página de blog muestra todas las publicaciones del blog.
+
+// Components
+// - Layout
+import Layout from '../../../layouts/Layout.astro'
+// - Blocks
+import Hero from '../../../components/blocks/hero/BasicHeroCTA.astro'
+import BlogMasonryGrid from '../../../components/blocks/blog/BlogMasonryGrid.astro'
+// - Collection
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths({ paginate }: any) {
+	// Helper function to get locale from entry ID
+	function getLocaleFromId(id: string): string {
+		if (id.startsWith('fr/')) return 'fr'
+		if (id.startsWith('en/')) return 'en'
+		return 'en' // default to English
+	}
+
+	const allPosts = await getCollection('blog')
+	// Filter to only Spanish entries (fr/ prefix)
+	const spanishPosts = allPosts.filter((entry) => {
+		const locale = getLocaleFromId(entry.id)
+		return locale === 'fr'
+	})
+	return paginate(spanishPosts, { pageSize: 6 })
+}
+const { page } = Astro.props as any
+
+// Content
+// - SEO
+const SEO = {
+	title: 'pytagora | Proyectos de Trabajo',
+	description:
+		"Explora los últimos proyectos de trabajo de pytagora diseñados para mejorar la productividad, garantizar seguridad de primer nivel e integrarse perfectamente con tus herramientas favoritas."
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero
+		title="En lo que estamos pensando."
+		text="Notas del estudio sobre trabajo, proceso y resolución creativa de problemas. Sin relleno, solo ideas que queríamos compartir."
+		classes="pb-0!"
+	/>
+	<BlogMasonryGrid
+		data={page.data}
+		{...page.lastPage === 1
+			? {}
+			: {
+					pagination: {
+						first: page.url.first,
+						current: page.url.current,
+						length: page.lastPage,
+						prev: page.url.prev,
+						next: page.url.next,
+						last: page.url.last,
+						size: page.size,
+						total: page.total
+					}
+				}}
+	/>
+</Layout>
+

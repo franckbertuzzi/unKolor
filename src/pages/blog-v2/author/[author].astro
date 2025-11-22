@@ -1,0 +1,125 @@
+---
+// Blog Author Page
+// ------------
+// Description: The blog author page is a page that displays all the blog posts written by a specific author.
+
+// Components
+// - Layout
+import Layout from '../../../layouts/Layout.astro'
+import Section from '../../../components/ui/Section.astro'
+import Row from '../../../components/ui/Row.astro'
+import Col from '../../../components/ui/Col.astro'
+// - Blocks
+import BlogCard from '../../../components/ui/cards/BlogCard.astro'
+import Hero from '../../../components/blocks/hero/BasicHeroCTA.astro'
+
+// Data
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+	// Helper function to get locale from entry ID
+	function getLocaleFromId(id: string): string {
+		if (id.startsWith('fr/')) return 'fr'
+		if (id.startsWith('en/')) return 'en'
+		return 'en' // default to English
+	}
+
+	// Helper function to get base ID without locale prefix
+	function getBaseId(id: string): string {
+		if (id.startsWith('fr/')) return id.replace('fr/', '')
+		if (id.startsWith('en/')) return id.replace('en/', '')
+		return id
+	}
+
+	const allAuthors = await getCollection('blog')
+	// Filter to only English entries
+	const englishPosts = allAuthors.filter((entry) => {
+		const locale = getLocaleFromId(entry.id)
+		return locale === 'en'
+	})
+	const uniqueAuthors = [...new Set(englishPosts.map((blogAuthor) => blogAuthor.data.author).flat())]
+
+	return uniqueAuthors.map((author) => {
+		const filteredGuides = englishPosts.filter((blogAuthor) =>
+			blogAuthor.data.author.includes(author)
+		)
+		return {
+			params: { author },
+			props: { authors: filteredGuides }
+		}
+	})
+}
+const { author } = Astro.params
+const { authors } = Astro.props
+
+// Helper function to get base ID without locale prefix
+function getBaseId(id: string): string {
+	if (id.startsWith('fr/')) return id.replace('fr/', '')
+	if (id.startsWith('en/')) return id.replace('en/', '')
+	return id
+}
+
+// Format and hold the formatted author name in one statement
+const formattedAuthorName = author
+	.split('-')
+	.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+	.join(' ')
+
+// Get current locale
+const currentLocale = (Astro.currentLocale || 'en') as 'en' | 'fr'
+
+// Translations
+const translations = {
+	en: {
+		authorTitle: 'Blog posts written by',
+		viewAllText: 'View all the latest pytagora posts from'
+	},
+	fr: {
+		authorTitle: 'Publicaciones del blog escritas por',
+		viewAllText: 'Ver todas las últimas publicaciones de pytagora de'
+	}
+}
+
+const t = translations[currentLocale]
+
+// Content
+// - SEO
+const SEO = {
+	title: `pytagora | Author ` + formattedAuthorName,
+	description:
+		"Explore pytagora's latest news designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with pytagora today!"
+}
+
+// - Page Header
+const header = {
+	title: `${t.authorTitle} ${formattedAuthorName}`,
+	text: `${t.viewAllText} ${formattedAuthorName}.`
+}
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+	<Hero title={header.title} text={header.text} titleSpan="8" type="vertical" />
+	<Section classes="pt-0!">
+		<Row>
+			{
+				authors.map((post: any) => {
+					return (
+						<Col span="4">
+							<BlogCard
+								title={post.data.title}
+								image={post.data.image}
+								video={post.data.video}
+								link={`/blog-v2/${getBaseId(post.id)}`}
+								date={post.data.pubDate}
+								author={author}
+								classes="h-full"
+							>
+								{post.data.description}
+							</BlogCard>
+						</Col>
+					)
+				})
+			}
+		</Row>
+	</Section>
+</Layout>

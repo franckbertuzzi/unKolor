@@ -1,0 +1,26 @@
+[
+	{
+		"number": 120,
+		"suffix": "+",
+		"title": "Proyectos completados",
+		"description": "Desde startups audaces hasta leyendas en crecimiento, hemos construido marcas y sitios."
+	},
+	{
+		"number": 85,
+		"title": "Marcas construidas",
+		"description": "Identidades completas creadas desde cero — logos, voces y vibras incluidas."
+	},
+	{
+		"number": 15,
+		"suffix": "+",
+		"title": "Industrias atendidas",
+		"description": "Tecnología, moda, bienestar, SaaS y lo que venga después — nos gusta un buen desafío."
+	},
+	{
+		"number": 23,
+		"suffix": "k",
+		"title": "Horas registradas",
+		"description": "Noches tardías, ideas salvajes y mucho buen café detrás de cada píxel que empujamos."
+	}
+]
+
