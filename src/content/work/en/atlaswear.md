@@ -9,7 +9,7 @@ list:
   - 'Product filters & variant logic'
   - 'Mobile-first responsive system'
 imageThumbnail: '/collections/work/atlaswear.jpg'
-video: '/collections/work/atlaswear.mp4'
+image: "/assets/images/a.jpg"
 introduction:
   title: 'The Brief'
   subtitle: 'A quick look at the goals, the spark behind the project, and what made it worth building.'
@@ -27,11 +27,11 @@ whatWeDid:
   title: 'What We Brought'
   subtitle: 'What we contributed — from first wireframes to final touches.'
   images:
-    - '/assets/images/image-01.webp'
-    - '/assets/images/image-02.webp'
-    - '/assets/images/image-03.webp'
-    - '/assets/images/image-04.webp'
-    - '/assets/images/image-10.webp'
+    - '/assets/images/a.jpg'
+    - '/assets/images/b.jpg'
+    - '/assets/images/c.jpg'
+    - '/assets/images/d.jpg'
+    - '/assets/images/1.webp'
 
   body: >
     <p>We brought a clean, conversion-optimized UX strategy paired with a visual identity refresh. Our work included updated typography, flexible layout components, and lightweight interactions that felt deliberate and modern. The result was a storefront that feels polished and efficient—reflecting the energy and ambition of the brand itself.</p>
