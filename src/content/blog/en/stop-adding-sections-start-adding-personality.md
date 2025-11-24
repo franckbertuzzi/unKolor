@@ -1,11 +1,13 @@
 ---
-title: 'Stop Adding Sections — Start Adding Personality'
-subtitle: 'Good websites don’t just organize information — they express identity. It’s time to stop blending in and start standing out.'
+title: Stop Adding Sections — Start Adding Personality
+subtitle: Good websites don’t just organize information — they express identity. It’s time to stop blending in and start standing out.
 pubDate: 2024-07-03T05:00:00.000Z
-author: 'marcus-delgado'
-description: 'So many websites feel the same: neatly stacked sections, generic icons, one-size-fits-all layouts. But a brand is more than a collection of components — it’s a feeling. Personality doesn’t come from structure alone; it comes from choices. How you name a button. The image you choose. The tone of your error message. When you stop relying on default templates and start speaking in your brand’s true voice, the entire experience shifts. Suddenly, your site doesn’t just function — it resonates.'
-imageThumbnail: '/collections/blog/images/thumbnail-04.webp'
-image: '/collections/blog/images/image-04.webp'
+author: marcus-delgado
+description: "So many websites feel the same: neatly stacked sections, generic icons, one-size-fits-all layouts. But a brand is more than a collection of components — it’s a feeling. Personality doesn’t come from structure alone; it comes from choices. How you name a button. The image you choose. The tone of your error message. When you stop relying on default templates and start speaking in your brand’s true voice, the entire experience shifts. Suddenly, your site doesn’t just function — it resonates."
+imageThumbnail: /collections/blog/images/thumbnail-04.webp
+image: /collections/blog/images/image-04.webp
+tags:
+    - Tag one
 ---
 
 When a website feels flat or uninspired, the instinct is often to add more: another section, another feature, another block of content. But more sections don’t always mean more impact. In fact, they can dilute your message. What most sites are missing isn’t content—it’s personality.

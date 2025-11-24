@@ -40,6 +40,5 @@ feedback:
     figcaption: John Doe, Equipo de Atlaswear
   body: |
     <p>El diseño invisible requiere disciplina. Es tentador agregar más—más características, más decoración, más trucos de UI inteligentes. Pero se necesita moderación y sabiduría para eliminar lo innecesario. Requiere escuchar más que hablar, observar más que asumir.</p>
-tags:
-  - Tag one
+tags: []
 ---
