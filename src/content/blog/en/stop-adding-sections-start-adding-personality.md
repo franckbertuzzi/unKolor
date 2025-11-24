@@ -1,5 +1,5 @@
 ---
-title: Stop Adding Sections — Start Adding Personality
+title: Stop Adding Sections — New personnality
 subtitle: Good websites don’t just organize information — they express identity. It’s time to stop blending in and start standing out.
 pubDate: 2024-07-03T05:00:00.000Z
 author: marcus-delgado
