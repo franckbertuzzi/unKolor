@@ -5,7 +5,7 @@
 		"alt": "El tema de astro tailwind"
 	},
 	"navItems": [
-		{ "name": "Travail", "link": "/fr/work" },
+		{ "name": "Egérie", "link": "/fr/work" },
 		{ "name": "Services", "link": "/fr/services" },
 		{ "name": "Culture", "link": "/fr/about-v1" },
 		{ "name": "Blog", "link": "/fr/blog" },
