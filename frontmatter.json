@@ -13,7 +13,48 @@
       "previewPath": "'blog'",
       "pageBundle": false,
       "clearEmpty": true,
-      "fields": []
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "subtitle",
+          "name": "subtitle",
+          "type": "string"
+        },
+        {
+          "title": "pubDate",
+          "name": "pubDate",
+          "type": "datetime"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "imageThumbnail",
+          "name": "imageThumbnail",
+          "type": "image"
+        },
+        {
+          "title": "image",
+          "name": "image",
+          "type": "image"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        }
+      ]
     }
   ],
   "frontMatter.framework.id": "astro",
